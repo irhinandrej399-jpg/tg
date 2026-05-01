@@ -1,0 +1,33 @@
+telegram:
+  # api_id и api_hash задаются через TG_API_ID / TG_API_HASH env
+  # Получить: https://my.telegram.org/apps
+  api_id: 0
+  api_hash: ""
+
+accounts:
+  - phone: "+79001234567"          # только для логов
+    session_file: "sessions/account1.session"
+  # второй аккаунт опционален
+  - phone: "+79007654321"
+    session_file: "sessions/account2.session"
+
+  - merchant_chat_id: -5184054939
+    support_chat_id:  -5034560781
+  - merchant_chat_id: -5291933132
+    support_chat_id:  -5142081738
+
+schedule:
+  day_start: 8      # первый аккаунт: 08:00–20:00 МСК
+  night_start: 20   # второй аккаунт: 20:00–08:00 МСК
+
+humanize:
+  delay_min: 1   # секунды
+  delay_max: 4
+
+database:
+  # DSN задаётся через DATABASE_URL env
+  dsn: ""
+
+log:
+  level: "info"    # debug | info | warn | error
+  format: "json"   # json | text
